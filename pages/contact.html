@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amazoo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <script src="../js/vendor/modernizr-2.8.0.min.js"></script>
+    <script src="../js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="header"></div>
+<script>
+        $(function(){
+          $("#header").load("header.html");
+          $("#footer").load("footer.html");
+        });
+        </script>
+<div>
+    <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Contact Info</li>
+    </ol>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <iframe width="1024" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=51.5246%2C-0.1340&key=AIzaSyCyKC_vyjf1qAHCYDKl9oGn7q45bSiaTAI"></iframe>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="col-sm-offset-2 col-sm-7">
+            <!-- Form itself -->
+            <form name="sentMessage" class="well" id="contactForm"  novalidate>
+                <legend>Contact me</legend>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               placeholder="Full Name" id="name" required
+                               data-validation-required-message="Please enter your name" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="email" class="form-control" placeholder="Email"
+                               id="email" required
+                               data-validation-required-message="Please enter your email" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <textarea rows="10" cols="100" class="form-control"
+                                  placeholder="Message" id="message" required
+                                  data-validation-required-message="Please enter your message" minlength="5"
+                                  data-validation-minlength-message="Min 5 characters"
+                                  maxlength="999" style="resize:none"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div id="footer"></div>
+
+</body>
+</html>

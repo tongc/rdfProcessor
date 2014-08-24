@@ -10,6 +10,10 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+.main {
+    background-image: url('../img/bg.png');
+}
+
 html {
     color: #222;
     font-size: 1em;
