@@ -8,8 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
-
     <link rel="stylesheet" href="../css/shop.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -28,6 +26,7 @@
 <script>
         $(function(){
           $("#header").load("header.html");
+          $("#category").load("computercategory.html");
           $("#footer").load("footer.html");
         });
 </script>
@@ -43,29 +42,22 @@
 
     <div class="row">
 
-        <div class="col-md-3">
-            <div class="list-group">
-                <a href="computer.html" class="list-group-item active">Computer and Electronics Devices</a>
-                <a href="#" class="list-group-item">Baby Products</a>
-                <a href="#" class="list-group-item">Needle Book Store</a>
-                <a href="#" class="list-group-item">Cars</a>
-
-            </div>
-        </div>
+        <div id="category"></div>
 
         <div class="col-md-9">
 
-            <div class="thumbnail">
-                <img class="img-responsive" src="../img/computer31.jpg" alt="">
+
+            <div class="thumbnail h-product" itemscope itemtype="http://schema.org/Product" itemid="#5dmk3" about="#5dmk3" vocab="http://schema.org/" typeof="Product">
+                <img class="img-responsive u-photo" src="../img/computer32.jpg" itemprop="image" property="image">
                 <div class="caption-full">
-                    <h4 class="pull-right">£24.99</h4>
-                    <h4><a href="#">Canon 5D MarkIII</a>
-                    </h4>
-                    <p>The Canon EOS 5D Mark III is a professional full-frame digital single-lens reflex (DSLR) camera made by Canon. It has a 22.3 megapixel CMOS image sensor. Succeeding the EOS 5D Mark II, it was announced on 2 March 2012,[2] the 25th anniversary of the announcement of the first camera in the EOS line, the EOS 650. It was also Canon's 75th anniversary.[3] The Mark III went on sale later in March with a retail price of $3499 in the US, £2999 in the UK, and €3569 in the Eurozone.[4]</p>
+                    <h4 class="pull-right p-price" itemscope itemtype="http://schema.org/Offer" vocab="http://schema.org/" typeof="Offer"><meta itemprop="price" property="price" content="£1,599.99">£1,599.99</h4>
+                    <h4 class="p-name" itemprop="name" property="name">Canon 5D MarkIII</h4>
+                    <h6 itemprop="isRelatedTo" property="isRelatedTo" href="computer32.html#5dmk2">Canon 5D MarkII</h6>
+                    <p class="e-description" itemprop="description" property="description">The Canon EOS 5D Mark III is a professional full-frame digital single-lens reflex (DSLR) camera made by Canon. It has a 22.3 megapixel CMOS image sensor. Succeeding the EOS 5D Mark II, it was announced on 2 March 2012,[2] the 25th anniversary of the announcement of the first camera in the EOS line, the EOS 650. It was also Canon's 75th anniversary.[3] The Mark III went on sale later in March with a retail price of $3499 in the US, £2999 in the UK, and €3569 in the Eurozone.[4]</p>
                 </div>
-                <div class="ratings">
-                    <p class="pull-right">3 reviews</p>
-                    <p>
+                <div class="ratings h-review" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" vocab="http://schema.org/" typeof="AggregateRating">
+                    <p class="pull-right" itemprop="reviewCount" property="reviewCount">3 reviews</p>
+                    <p class="p-rating" itemprop="ratingValue" property="ratingValue" content="4.0">
                         <span class="glyphicon glyphicon-star"></span>
                         <span class="glyphicon glyphicon-star"></span>
                         <span class="glyphicon glyphicon-star"></span>

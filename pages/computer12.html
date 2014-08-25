@@ -8,8 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
-
     <link rel="stylesheet" href="../css/shop.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -28,6 +26,7 @@
 <script>
         $(function(){
           $("#header").load("header.html");
+          $("#category").load("computercategory.html");
           $("#footer").load("footer.html");
         });
 </script>
@@ -42,16 +41,7 @@
     </ol>
 
     <div class="row">
-
-        <div class="col-md-3">
-            <div class="list-group">
-                <a href="computer.html" class="list-group-item active">Computer and Electronics Devices</a>
-                <a href="#" class="list-group-item">Baby Products</a>
-                <a href="#" class="list-group-item">Needle Book Store</a>
-                <a href="#" class="list-group-item">Cars</a>
-
-            </div>
-        </div>
+        <div id="category"></div>
 
         <div class="col-md-9">
 
