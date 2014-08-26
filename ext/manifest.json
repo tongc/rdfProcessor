@@ -4,29 +4,35 @@
 	"description": "For displaying RDFa tag contents in a user-friendly way",
 	"version": "0.1",
 	"browser_action": {
-    	"default_icon": "img/icon.png",
+    	"default_icon": "icon.png",
     	"default_popup": "popup.html"
   	},
 	"background": {
 		"scripts": [
-			"js/vendor/jquery-1.11.1.min.js",
-			"js/bk.js",
-			"js/popup.js"
+			"jquery-1.11.1.min.js",
+			"bk.js",
+			"popup.js"
 		]
 	},
   	"omnibox": { 
   		"keyword" : "RDFa"
 	},
   	"icons": {
-  		"16": "img/icon.png",
-  		"32": "img/icon.png",
-		"48": "img/icon.png",
-    	"128": "img/icon.png" 
+  		"16": "icon.png",
+  		"32": "icon.png",
+		"48": "icon.png",
+    	"128": "icon.png"
   	},
   	"permissions": [
   		"http://*/",
 		"https://*/",
     	"tabs",
     	"storage"
-  	]
+  	],
+  	"content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["main.js"]
+      }
+    ]
 }
