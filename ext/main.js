@@ -28,8 +28,19 @@ var getTriples = function(elements) {
         contentType:  "text/html"
       });
 
+      function processResult(objArray) {
+        var newArray = new Array();
+        for(var i=0;i<objArray.length;i++) {
+          var object = objArray[i][2];
+          delete object["lang"];
+          delete object["datatype"];
+          newArray.push(object);
+        }
+        return newArray;
+      };
+
       request.done(function( msg ) {
-        chrome.extension.sendMessage({tags: JSON.stringify(msg)}, function(response) {
+        chrome.extension.sendMessage({tags: JSON.stringify(processResult(msg.quads))}, function(response) {
         });
       });
     });
