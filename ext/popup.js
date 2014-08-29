@@ -8,12 +8,8 @@ chrome.storage.sync.get('tags', function(items) {
         var myRecords = JSON.parse(items.tags);
         $('#triplesTable').dynatable({
           dataset: {
-            records: myRecords.quads
+            records: myRecords
           }
         });
-
-  		for (var i = 0; i < items.tags.length; i++) {
-    		$('#RDFa').append(items.tags[i]);
-    	}
 	}
   });
