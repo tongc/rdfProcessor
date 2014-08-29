@@ -1,151 +1,32 @@
 <!doctype html>
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title></title>
     <style>
 		body {
 			min-width: 550px;
 		}
-		/* div container containing the form  */
-		#searchContainer {
-			margin:20px;
-		}
- 
-		/* Style the search input field. */
-		#inputBox {
-			float:left; 
-			width:455px; 
-			height:27px; 
-			line-height:27px;
-			text-indent:10px; 
-			font-family:arial, sans-serif; 
-			font-size:1em; 
-			color:#333; 
-			background: #fff; 
-			border:solid 1px #d9d9d9; 
-			border-top:solid 1px #c0c0c0; 
-			border-right:none;
-		}
- 
-		/* Style the "X" text button next to the search input field */
-		#delete {
-			float:left; 
-			width:16px;
-			height:29px; 
-			line-height:27px; 
-			margin-right:15px; 
-			padding:0 10px 0 10px;
-			font-family: "Lucida Sans", "Lucida Sans Unicode",sans-serif;
-			font-size:22px; 
-			background: #fff;  
-			border:solid 1px #d9d9d9; 
-			border-top:solid 1px #c0c0c0; 
-			border-left:none;
-		}
-		/* Set default state of "X" and hide it */
-		#delete #x {
-			color:#A1B9ED; 
-			cursor:pointer;
-			display:none;
-		}
-		/* Set the hover state of "X" */
-		#delete #x:hover {
-			color:#36c;
-		}
-		/* Syle the search button. Settings of line-height, font-size, text-indent used to hide submit value in IE */
-		#search {
-			cursor:pointer; 
-			width:70px; 
-			height: 31px; 
-			line-height:0; 
-			font-size:0; 
-			text-indent:-999px;
-			color: transparent;  
-			background: url(search.png) no-repeat #4d90fe center; 
-			border: 1px solid #3079ED; 
-			-moz-border-radius: 2px; 
-			-webkit-border-radius: 2px; 
-		}
-		/* Style the search button hover state */
-		#search:hover {
-			background: url(search.png) no-repeat center #357AE8; 
-			border: 1px solid #2F5BB7;
-		}
-		/* Clear floats */
-		.fclear {clear:both}
-		.hide {
-			display:none;
-		}
     </style>
-
+    <link rel="stylesheet" type="text/css" href="jquery.dynatable.css">
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
-    <script src="jquery-1.9.1.min.js"></script>
-    <script src="jquery.soap.js"></script>
-    <script src="mustache.js"></script>
-    <script src="popup.js"></script>
+      <script src="jquery-1.11.1.min.js"></script>
+      <script src="jquery.dynatable.js"></script>
+      <script src="popup.js"></script>
   </head>
   <body>
- 	<script id="mingle" type="text/template">  
- 	{{#.}}
- 	<a {{#Number}}class="result"{{/Number}} target="_new" href="https://mingle.karmalab.net/projects/ewe_checkout/cards/{{Number}}">
- 	<strong>{{Name}}</strong>
-	</a>
-	{{/.}}
-	</script>
-
-	<script id="jira" type="text/template">
-  	<a {{#key}}class="result"{{/key}} target="_new" href="https://jira:8443/jira/browse/{{key}}">
-  		<strong>
-  		{{#fields}}{{summary}}{{/fields}}
-  		</strong>
-  	</a>
-	</script>
-
-	<script id="confluence" type="text/template">
-  	{{#result}}
-  	<div class="hide">
-	<ul id="{{id}}">
-	{{#link}}<li>{{href}}</li>{{/link}}
-	</ul>
-	</div>
-  	<a target="_new" href="#">
-  		<strong>
-  		{{title}}
-  		</strong>
-  	</a>
-  	<br/>
-  	{{/result}}
-	</script>
-
-	<!--span>Query History</span>
-	<div id="queryHistory">
-  	</div-->
-  
-	<div id="searchContainer">
-        <input id="inputBox" name="field" type="text" />
-        <div id="delete"><span id="x">x</span></div>
-	</div>
-
-	<br/><br/>
-	<h3 class="section"><a target="_new" href="https://mingle.karmalab.net/projects/ewe_checkout/">Mingle</a></h3>
-	<div id="mingleOut" class="searchResult">
-	</div>
-	<h3 class="section"><a target="_new" href="https://jira/jira/secure/Dashboard.jspa">JIRA</a></h3>
-	<div id="jiraOut" class="searchResult">
-	</div>
-	<h3 class="section"><a target="_new" href="https://confluence/">Confluence</a></h3>
-	<div id="confluenceOut" class="searchResult">
-	</div>
-	<!--p class="section">Splunk</p>
-	<div id="splunkOut" class="searchResult">
-	</div>
-	<p class="section">Ask</p>
-	<div id="askOut" class="searchResult">
-	</div-->
+ 	<div id="RDFa"></div>
+    <table id="triplesTable">
+        <thead>
+        <th>Type</th>
+        <th>Value</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
   </body>
 </html>

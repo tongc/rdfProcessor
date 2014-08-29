@@ -8,10 +8,10 @@
     	"default_popup": "popup.html"
   	},
 	"background": {
+	    "persistent": true,
 		"scripts": [
 			"jquery-1.11.1.min.js",
-			"bk.js",
-			"popup.js"
+			"bk.js"
 		]
 	},
   	"omnibox": { 
