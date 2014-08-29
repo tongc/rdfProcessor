@@ -21,11 +21,24 @@ var getTriples = function(elements) {
     }
 
     elements.each(function() {
-      var request = $.ajax({
+    console.info($(this).parent().html());
+      $.ajax({
         url: "http://any23.org/any23/json/",
         type: "POST",
         data: $(this).parent().html(),
-        contentType:  "text/html"
+        contentType:  "text/html",
+        async: false,
+        success: function( msg ) {
+           chrome.extension.sendMessage({tags: JSON.stringify(processResult(msg.quads))},
+           function(response) {
+           })
+        },
+        error: function(request, status, error) {
+        console.info(request.responseText.quads);
+            chrome.extension.sendMessage({tags: JSON.stringify(processResult(JSON.parse(request.responseText.replace(/(\r\n|\n|\r)/gm,"")).quads))},
+            function(response) {
+            })
+        }
       });
 
       function processResult(objArray) {
@@ -38,11 +51,6 @@ var getTriples = function(elements) {
         }
         return newArray;
       };
-
-      request.done(function( msg ) {
-        chrome.extension.sendMessage({tags: JSON.stringify(processResult(msg.quads))}, function(response) {
-        });
-      });
     });
 };
 
