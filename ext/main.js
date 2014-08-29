@@ -29,6 +29,7 @@ var getTriples = function(elements) {
         contentType:  "text/html",
         async: false,
         success: function( msg ) {
+            console.info(msg.quads);
            chrome.extension.sendMessage({tags: JSON.stringify(processResult(msg.quads))},
            function(response) {
            })
@@ -47,6 +48,7 @@ var getTriples = function(elements) {
           var object = objArray[i][2];
           delete object["lang"];
           delete object["datatype"];
+          object.namespace = objArray[i][1];
           newArray.push(object);
         }
         return newArray;
