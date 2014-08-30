@@ -15,25 +15,63 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="jquery.dynatable.css">
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-     -->
+    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.structure.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.theme.min.css">
+
+      <!--
+        - JavaScript and HTML must be in separate files: see our Content Security
+        - Policy documentation[1] for details and explanation.
+        -
+        - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+       -->
       <script src="jquery-1.11.1.min.js"></script>
       <script src="jquery.dynatable.js"></script>
+      <script src="jquery-ui.min.js"></script>
       <script src="popup.js"></script>
   </head>
   <body>
-    <table id="triplesTable">
-        <thead>
+  <div id="tabs">
+      <ul>
+          <li><a href="#tabs-1">RDFa</a></li>
+          <li><a href="#tabs-2">Microdata</a></li>
+          <li><a href="#tabs-3">Microformats</a></li>
+      </ul>
+    <div id="tabs-1">
+        <table id="triplesTableRDFa">
+            <thead>
+                <th>Namespace</th>
+                <th>Type</th>
+                <th>Value</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="tabs-2">
+        <table id="triplesTableMicrodata">
+            <thead>
             <th>Namespace</th>
             <th>Type</th>
             <th>Value</th>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+      <div id="tabs-3">
+          <table id="triplesTableMicroformats">
+              <thead>
+              <th>Namespace</th>
+              <th>Type</th>
+              <th>Value</th>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+      </div>
+  </div>
   </body>
 </html>
