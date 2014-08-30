@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
-	"name": "RDFa Processor",
-	"description": "For displaying RDFa tag contents in a user-friendly way",
+	"name": "Semantic Annotations Processor",
+	"description": "For displaying HTML tags that annotated with RDFa, Microdata or Microformats attributes in a user-friendly way",
 	"version": "0.1",
 	"browser_action": {
     	"default_icon": "icon.png",
